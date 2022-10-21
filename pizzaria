@@ -1,34 +1,33 @@
+algoritmo "ListaDeCompras"
+// Função :Simular o valor de um pedido de compras mensal da empresa OZZY
+var
+continuar,produto:caractere
+valoruni,valorporprodunit,totpedido:real
+quantidade:inteiro
+
 inicio
-
-repita
-limpatela
-
-escreval ("1 - calabresa")
-escreval ("2 - portuguesa")
-escreval ("3 - muçarela")
-escreval ("4 - marguerida")
-escreval ("5 - frango com catupiry")
-escreval ("6 - sair")
-escreval ("escolha uma opção de 1 a 6 ) : ")
-
-leia (op)
-escolha (op)
-caso 1
-escreval ("calabresa -------- $25,00")
-caso 2
-escreval ("portuguesa -------- $36,00")
-caso 3
-escreval ("muçarela -------- $28,00")
-caso 4
-escreval ("marguerida -------- $32,00")
-caso 5
-escreval ("frango com catupiry -------- $38,00")
-caso 6
-escreval ("agradecemos a preferência, volte sempre!")
-
-outro caso
-escreval ("opção inválida")
-FIMESCOLHA
-ate (op) = 6
-
+// Seção de Comandos
+totpedido <-0
+continuar <- "n"
+escreval("----------------------LISTA DE COMPRAS ppp----------------------")
+escreval("  ")
+escreva("Deseja incluir um item ? s/n -> ")
+leia(continuar)
+enquanto (continuar ="s") faca
+   escreval("  ")
+   escreva ("Digite o produto desejado -> ")
+   leia(produto)
+   escreva("Qual é o valor unitário do produto ? R$")
+   leia (valoruni)
+   escreva ("Quantidade: ")
+   leia(quantidade)
+   valorporprodunit <- valoruni*quantidade //soma total do valor de um item da lista recebe o preço unitario vezes a quantidade desejada
+   totpedido <- totpedido + valorporprodunit // total de pedido recebe ele mesmo "0" mais a soma total do valor de um item da lista
+   escreval("  ")
+   escreval("_________________________________________________________________")
+   escreva("Deseja incluir outro item ?s/n ")
+   leia(continuar)
+fimenquanto
+escreval("  ")
+escreval("O valor total de pedidos é -> R$",totpedido)
 fimalgoritmo
